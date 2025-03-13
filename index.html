@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -14,20 +15,86 @@
   </head>
   <body>
     <main class="">
+      <div class="overlay"></div>
+      <div class="mobile-menu shadow-xl gap-2 bg-white transition">
+        <div
+          class="flex items-center justify-between px-4 py-4 border-b border-gray-200"
+        >
+          <img src="./assets/logo.png" alt="Ooom Logo" class="w-12" />
+          <a href="#" class="close-mobile-menu w-8 px-2 py-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              class="fill-gray-800"
+            >
+              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="flex flex-col py-4 px-4">
+          <li class="font-poppins text-lg border-b border-primary/80">
+            <a href="/" class="flex w-full py-2">Home</a>
+          </li>
+          <li class="font-poppins text-lg border-b border-primary/80">
+            <a href="/" class="flex w-full py-2">About Us</a>
+          </li>
+          <li class="font-poppins text-lg border-b border-primary/80">
+            <a href="/" class="flex w-full py-2">Policies</a>
+          </li>
+          <li class="font-poppins text-lg">
+            <a href="/contact-us" class="flex w-full py-2">Contact Us</a>
+          </li>
+        </ul>
+      </div>
       <header
         class="w-full fixed top-0 z-[99] bg-primary/40 border-b border-white"
       >
         <div
-          class="flex items-center justify-between max-w-6xl m-auto py-4 px-2"
+          class="flex items-center justify-between max-w-6xl m-auto py-2 md:py-4 px-4"
         >
-          <a href="/" class="flex w-16 h-auto">
+          <a href="/" class="flex w-12 md:w-16 h-auto">
             <img src="./assets//logo.png" alt="Ooom Logo" />
           </a>
+          <div class="flex md:hidden">
+            <a href="#" class="mobile-menu-drawer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                width="24px"
+                height="24px"
+                class="text-white"
+              >
+                <path
+                  d="M4 18L20 18"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M4 12L20 12"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M4 6L20 6"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+          </div>
 
-          <div class="flex gap-2 items-center">
+          <div class="hidden md:flex gap-2 items-center">
             <a
               href="/contact-us"
-              class="text-white py-2 px-5 font-bold font-poppins text-xl bg-primary rounded transition hover:bg-primary/80"
+              class="text-white py-2 px-5 font-bold font-poppins text-md md:text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit cursor-pointer"
               >Contact Us</a
             >
           </div>
@@ -36,36 +103,53 @@
 
       <section class="heroSection relative py-28">
         <div
-          class="md:py-4 py-12 flex flex-col md:flex-row gap-2 md:gap-10 max-w-6xl m-auto z-10 relative"
+          class="px-4 py-8 md:pt-16 grid md:grid-cols-2 gap-6 md:gap-24 max-w-6xl m-auto z-10 relative"
         >
-          <div class="flex flex-col gap-3 md:gap-6 flex-1">
+          <div
+            class="flex flex-col gap-3 md:gap-6 flex-1 text-center md:text-left items-center md:items-start"
+          >
             <h1
-              class="font-poppins text-xl sm:text-5xl md:text-7xl font-bold text-black"
+              class="font-poppins text-3xl sm:text-5xl lg:text-7xl font-bold text-black"
+              data-aos="fade-up"
             >
               OOOM Simplify Your HR & Prioritize Your People
             </h1>
-            <p class="text-white font-roboto text-xl">
+            <p
+              class="text-white font-roboto text-lg md:text-xl"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               You deserve an intuitive HR, benefits, and payroll solution
               designed to help small and mid-sized businesses thrive.
             </p>
             <a
+              data-aos="fade-up"
+              data-aos-delay="150"
               href="#"
-              class="text-white py-2 px-5 font-bold font-poppins text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit"
+              class="text-white py-2 px-5 font-bold font-poppins text-md md:text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit"
               >Get Started</a
             >
           </div>
 
-          <div class="flex flex-col flex-1 bg-secondary card py-8 px-8">
+          <div
+            class="flex flex-col flex-1 bg-secondary card py-8 px-8"
+            data-aos="fade-up"
+          >
             <p
-              class="text-5xl mb-2 uppercase text-black font-poppins font-bold"
+              class="text-xl sm:text-3xl lg:text-5xl mb-2 uppercase text-black font-poppins font-bold"
             >
               Contact Us
             </p>
-            <p class="text-white text-4xl font-poppins font-semibold">
+            <p
+              class="text-white text-lg sm:text-2xl lg:text-4xl font-poppins font-semibold"
+            >
               Let’s Talk
             </p>
 
-            <form action="" class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-7">
+            <form
+              action=""
+              class="mt-5 md:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-7"
+            >
               <div class="flex flex-col">
                 <p class="text-black font-roboto font-normal">First name</p>
                 <input
@@ -110,7 +194,7 @@
               </div>
               <button
                 type="submit"
-                class="text-white py-2 px-5 font-bold font-poppins text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit cursor-pointer"
+                class="text-white py-2 px-5 font-bold font-poppins text-md md:text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit cursor-pointer"
               >
                 Submit
               </button>
@@ -119,7 +203,7 @@
         </div>
       </section>
 
-      <section class="py-16 overflow-hidden">
+      <section class="py-10 md:py-16 overflow-hidden">
         <div class="flex gap-16 items-center justify-center autoSlideshow">
           <img src="./assets/Logo-1.png" alt="" class="w-auto h-10" />
           <img src="./assets/Logo-2.png" alt="" class="w-auto h-10" />
@@ -132,17 +216,28 @@
         </div>
       </section>
 
-      <section class="py-28 max-w-6xl mx-auto">
-        <div class="flex justify-between gap-8">
+      <section class="py-12 md:py-28 max-w-6xl mx-auto px-4">
+        <div
+          class="flex justify-between gap-8 flex-col md:flex-row text-center md:text-left"
+        >
           <div class="flex-3">
-            <h2 class="font-poppins text-2xl sm:text-5xl font-bold">
+            <h2
+              class="font-poppins text-3xl lg:text-5xl font-bold"
+              data-aos="fade-up"
+            >
               WELCOME TO OOOM AND SHARE THE JOURNEY
             </h2>
-            <p class="text-secondary text-lg sm:text-4xl mt-4 font-semibold">
+            <p
+              class="text-secondary text-xl lg:text-4xl mt-4 font-semibold"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               Scale globally with velocity and ease
             </p>
             <p
-              class="text-custom-gray font-roboto text-lg text-justify sm:text-xl mt-6 max-w-2xl mx-auto"
+              class="text-custom-gray font-roboto text-md sm:text-xl text-center md:text-justify mt-6 max-w-2xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="100"
             >
               OOOM is built to scale with organizations of all sizes, from small
               teams to enterprises of thousands. Whether you want to hire
@@ -151,101 +246,149 @@
               consolidated payroll—Deel does it all with full compliance.
             </p>
             <a
+              data-aos="fade-up"
+              data-aos-delay="100"
               href="#"
-              class="text-white py-2 px-5 flex w-fit mt-6 font-bold font-poppins text-xl mt- bg-primary rounded transition hover:bg-primary/80"
+              class="text-white py-2 px-5 font-bold font-poppins text-md md:text-xl mt-4 mx-auto md:mx-0 bg-primary rounded transition hover:bg-primary/80 flex w-fit cursor-pointer"
               >Get Started</a
             >
           </div>
-          <div class="flex-3 flex flex-col gap-4 items-center">
+          <div
+            class="md:flex-3 md:flex md:flex-col grid grid-cols-3 gap-4 items-center"
+            data-aos="fade-up"
+          >
             <img
               src="https://picsum.photos/300/200"
               alt="Working at a computer"
-              class="w-64 rounded-lg shadow-md"
+              class="w-auto md:flex-auto md:w-64 rounded-lg shadow-md"
             />
             <img
               src="https://picsum.photos/300/200"
               alt="Working at a computer"
-              class="w-96 rounded-lg shadow-md"
+              class="w-auto md:flex-auto md:w-96 rounded-lg shadow-md scale-110 md:scale-none"
             />
             <img
               src="https://picsum.photos/300/200"
               alt="Working at a computer"
-              class="w-64 rounded-lg shadow-md mr-auto"
+              class="w-auto md:flex-auto md:w-64 mr-auto rounded-lg shadow-md"
             />
           </div>
         </div>
       </section>
 
-      <section class="py-28 bg-secondary">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="font-poppins text-2xl sm:text-5xl font-bold text-center">
+      <section class="py-12 md:py-28 bg-secondary">
+        <div class="max-w-6xl mx-auto text-center md:text-left px-4">
+          <h2
+            class="font-poppins text-3xl lg:text-5xl font-bold text-center"
+            data-aos="fade-up"
+          >
             OOOM customers save hundreds of hours and reduce HR costs by 40%
           </h2>
 
-          <div class="grid grid-cols-3 justify-center items-center gap-8 mt-16">
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p class="font-roboto text-xl text-custom-gray">
+          <div
+            class="grid grid-cols-3 justify-center items-center gap-4 md:gap-8 mt-12 md:mt-16"
+          >
+            <div
+              class="flex flex-col gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <p class="font-roboto text-md md:text-xl text-gray-800">
                 <strong class="text-black font-bold">Saved $20,000</strong>
                 annually and
                 <strong class="text-black font-bold">20 hours</strong> a week
                 with OOOM payroll.
               </p>
 
-              <img src="https://picsum.photos/500" alt="" class="w-56 h-auto" />
+              <img
+                src="https://picsum.photos/500"
+                alt=""
+                class="w-56 h-auto rounded-lg shadow"
+              />
             </div>
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p class="font-roboto text-xl text-custom-gray">
+            <div
+              class="flex flex-col gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <p class="font-roboto text-md md:text-xl text-gray-800">
                 <strong class="text-black font-bold">Saved $20,000</strong>
                 annually and
                 <strong class="text-black font-bold">20 hours</strong> a week
                 with OOOM payroll.
               </p>
 
-              <img src="https://picsum.photos/500" alt="" class="w-56 h-auto" />
+              <img
+                src="https://picsum.photos/500"
+                alt=""
+                class="w-56 h-auto rounded-lg shadow"
+              />
             </div>
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p class="font-roboto text-xl text-custom-gray">
+            <div
+              class="flex flex-col gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <p class="font-roboto text-md md:text-xl text-gray-800">
                 <strong class="text-black font-bold">Saved $20,000</strong>
                 annually and
                 <strong class="text-black font-bold">20 hours</strong> a week
                 with OOOM payroll.
               </p>
 
-              <img src="https://picsum.photos/500" alt="" class="w-56 h-auto" />
+              <img
+                src="https://picsum.photos/500"
+                alt=""
+                class="w-56 h-auto rounded-lg shadow"
+              />
             </div>
           </div>
 
-          <div class="flex gap-4 w-full items-center justify-center pt-8">
+          <div
+            class="flex gap-6 w-full items-center justify-center pt-8 md:mt-6"
+            data-aos="fade-up"
+          >
             <a
               href="#"
-              class="text-white py-2 px-5 flex w-fit mt-6 font-bold font-poppins text-xl mt- bg-primary rounded transition hover:bg-primary/80"
+              class="text-white py-2 px-5 font-bold font-poppins text-md md:text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit cursor-pointer"
               >GET DEMO</a
             >
 
             <a
               href="#"
-              class="text-white py-2 px-5 flex w-fit mt-6 font-bold font-poppins text-xl mt- bg-transparent border-custom-gray border-2 rounded transition hover:bg-primary/80"
+              class="text-white py-2 px-5 flex w-fit font-bold font-poppins text-md md:text-xl bg-transparent border-primary border-1 md:border-2 rounded transition hover:bg-primary/80"
               >LEARN MORE</a
             >
           </div>
         </div>
       </section>
 
-      <section class="py-28">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="font-poppins text-2xl sm:text-5xl font-bold text-center">
+      <section class="py-12 md:py-28">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2
+            class="font-poppins text-3xl lg:text-5xl font-bold text-center"
+            data-aos="fade-up"
+          >
             Why OOOM
           </h2>
 
           <p
-            class="text-secondary text-lg sm:text-4xl mt-4 font-semibold text-center"
+            class="text-secondary text-xl lg:text-4xl mt-4 font-semibold text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             Transform HR operations, drive employee success, and unlock
             workforce potential
           </p>
 
-          <div class="grid grid-cols-3 justify-center gap-8 mt-16">
-            <div class="flex flex-col gap-4">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 justify-center gap-8 mt-8 md:mt-16 text-center md:text-left"
+          >
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="flex flex-col gap-2 md:gap-4 items-center md:items-start"
+            >
               <svg
                 width="28"
                 height="28"
@@ -272,18 +415,24 @@
                 </defs>
               </svg>
 
-              <p class="text-primary font-poppins font-bold text-2xl">
+              <p
+                class="text-primary font-poppins font-bold text-lg lg:text-2xl"
+              >
                 Designed for All
               </p>
               <p
-                class="text-justify font-roboto font-normal text-xl text-custom-gray"
+                class="text-center md:text-justify font-roboto font-normal mt-0.5 md:mt-0 text-md lg:text-xl text-custom-gray"
               >
                 A user-friendly platform for HR teams, IT,tech-savvy employees,
                 and beginners, fully customizable and accessible anywhere with a
                 mobile app.
               </p>
             </div>
-            <div class="flex flex-col gap-4">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="flex flex-col gap-2 md:gap-4 items-center md:items-start"
+            >
               <svg
                 width="29"
                 height="25"
@@ -305,18 +454,24 @@
                 </defs>
               </svg>
 
-              <p class="text-primary font-poppins font-bold text-2xl">
+              <p
+                class="text-primary font-poppins font-bold text-lg lg:text-2xl"
+              >
                 Transform HR Operation
               </p>
               <p
-                class="text-justify font-roboto font-normal text-xl text-custom-gray"
+                class="text-center md:text-justify font-roboto font-normal mt-0.5 md:mt-0 text-md lg:text-xl text-custom-gray"
               >
                 Transform HR Operation A user-friendly platform for HR teams,
                 IT,tech-savvy employees, and beginners, fully customizable and
                 accessible anywhere with a mobile app.
               </p>
             </div>
-            <div class="flex flex-col gap-4">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="flex flex-col gap-2 md:gap-4 items-center md:items-start"
+            >
               <svg
                 width="28"
                 height="28"
@@ -343,11 +498,13 @@
                 </defs>
               </svg>
 
-              <p class="text-primary font-poppins font-bold text-2xl">
+              <p
+                class="text-primary font-poppins font-bold text-lg lg:text-2xl"
+              >
                 Drive Employee Success
               </p>
               <p
-                class="text-justify font-roboto font-normal text-xl text-custom-gray"
+                class="text-center md:text-justify font-roboto font-normal mt-0.5 md:mt-0 text-md lg:text-xl text-custom-gray"
               >
                 A user-friendly platform for HR teams, IT,tech-savvy employees,
                 and beginners, fully customizable and accessible anywhere with a
@@ -356,64 +513,72 @@
             </div>
           </div>
 
-          <div class="flex gap-4 w-full items-center justify-center pt-8">
+          <div
+            class="flex gap-4 w-full items-center justify-center pt-8"
+            data-aos="fade-up"
+          >
             <a
               href="#"
-              class="text-white py-2 px-5 flex w-fit mt-6 font-bold font-poppins text-xl mt- bg-primary rounded transition hover:bg-primary/80"
+              class="text-white py-2 px-5 font-bold font-poppins text-md md:text-xl bg-primary rounded transition hover:bg-primary/80 flex w-fit cursor-pointer"
               >Book Free Demo</a
             >
           </div>
         </div>
       </section>
 
-      <section class="py-28 bg-secondary">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="font-poppins text-2xl sm:text-5xl font-bold text-center">
+      <section class="py-12 md:py-28 bg-secondary">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2
+            class="font-poppins text-3xl lg:text-5xl font-bold text-center"
+            data-aos="fade-up"
+          >
             Switch to OOOM today
           </h2>
 
-          <div class="grid grid-cols-4 justify-center items-center gap-8 mt-16">
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p
-                class="font-poppins text-2xl sm:text-5xl font-bold text-center"
-              >
-                4X
-              </p>
+          <div
+            class="grid grid-cols-4 justify-center gap-4 md:gap-8 mt-8 md:mt-16"
+          >
+            <div
+              class="flex flex-col gap-2 md:gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <p class="font-poppins text-3xl lg:text-5xl font-bold">4X</p>
 
-              <p class="font-roboto text-xl text-custom-gray">
+              <p class="font-roboto text-sm md:text-xl text-gray-800">
                 Attract More Direct Potential Candidate
               </p>
             </div>
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p
-                class="font-poppins text-2xl sm:text-5xl font-bold text-center"
-              >
-                80%
-              </p>
+            <div
+              class="flex flex-col gap-2 md:gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <p class="font-poppins text-3xl lg:text-5xl font-bold">80%</p>
 
-              <p class="font-roboto text-xl text-custom-gray">
+              <p class="font-roboto text-sm md:text-xl text-gray-800">
                 Spend Less time on Admin Task
               </p>
             </div>
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p
-                class="font-poppins text-2xl sm:text-5xl font-bold text-center"
-              >
-                40%
-              </p>
+            <div
+              class="flex flex-col gap-2 md:gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <p class="font-poppins text-3xl lg:text-5xl font-bold">40%</p>
 
-              <p class="font-roboto text-xl text-custom-gray">
+              <p class="font-roboto text-sm md:text-xl text-gray-800">
                 Make Hires faster than others
               </p>
             </div>
-            <div class="flex flex-col gap-4 text-center items-center">
-              <p
-                class="font-poppins text-2xl sm:text-5xl font-bold text-center"
-              >
-                83%
-              </p>
+            <div
+              class="flex flex-col gap-2 md:gap-4 text-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <p class="font-poppins text-3xl lg:text-5xl font-bold">83%</p>
 
-              <p class="font-roboto text-xl text-custom-gray">
+              <p class="font-roboto text-sm md:text-xl text-gray-800">
                 Reduce Recruitment agency
               </p>
             </div>
@@ -421,32 +586,41 @@
         </div>
       </section>
 
-      <footer class="bg-primary py-16">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-          <div class="logo">
-            <img src="./assets/logo-dark.png" alt="Ooom Logo" />
+      <footer class="bg-gray-950 py-8 md:py-16 px-4">
+        <div
+          data-aos="fade-up"
+          class="max-w-6xl mx-auto flex gap-8 md:items-center justify-between flex-col-reverse md:flex-row"
+        >
+          <div class="logo md:mx-0 mx-auto">
+            <img src="./assets/logo.png" class="w-24" alt="Ooom Logo" />
           </div>
 
-          <div class="flex flex-col gap-4 pb-8">
-            <p class="font-poppins font-semibold text-2xl">
+          <div class="flex flex-col gap-4 md:pb-8">
+            <p class="font-poppins font-semibold text-2xl text-white">
               Join to get the latest news
             </p>
-            <form class="newsletter flex gap-4">
+            <form
+              class="newsletter flex gap-4 justify-between md:min-w-96 md:flex-nowrap flex-wrap"
+            >
               <input
                 type="text"
-                class="py-2 px-4 border rounded bg-white min-w-72"
+                class="py-2 px-4 border rounded bg-white w-full md:w-[70%]"
                 placeholder="Enter Your Email"
               />
               <button
-                class="text-black py-2 px-5 font-bold font-poppins text-xl bg-secondary rounded transition hover:bg-secondary/80 cursor-pointer"
+                class="text-white py-2 px-5 md:px-0 text-center items-center justify-center w-fit md:w-[30%] font-bold font-poppins text-md bg-primary rounded transition hover:bg-primary/80 flex cursor-pointer"
               >
                 Subscribe
               </button>
             </form>
           </div>
         </div>
-        <p class="text-center text-custom-gray">Copyright © 2024 OOOM</p>
+        <p class="text-center text-custom-gray md:pt-0 pt-8">
+          Copyright © 2024 OOOM
+        </p>
       </footer>
     </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
